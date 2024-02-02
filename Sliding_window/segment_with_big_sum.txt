@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+int solve(vector<int>&arr,int n,long long s){
+	int i=0,j=0;
+	long long sum=0;
+	int minn=INT_MAX;
+	while(j<n){
+		sum+=arr[j];
+		while(sum>=s){
+			minn=min(minn,j-i+1);
+			sum-=arr[i];
+			i++;
+		}
+		j++;
+	}
+	return minn;
+}
+int main() {
+	// your code goes here
+	int t;cin>>t;
+	while(t--){
+		int n;long long s;
+		cin>>n>>s;
+		vector<int>a(n);
+		for(int i=0;i<n;i++){
+			cin>>a[i];
+		}
+		cout<<solve(a,n,s)<<"\n";
+	}
+	return 0;
+}

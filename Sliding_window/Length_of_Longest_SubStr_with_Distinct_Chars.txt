@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+int solve(string &s){
+	int n=s.size();
+	int i=0,j=0;
+	int maxx=INT_MIN;
+	map<char,int>mp;
+	while(j<n){
+		mp[s[j]]++;
+		while(mp[s[j]]>1){
+			mp[s[i]]--;
+			i++;
+		}
+		maxx=max(maxx,j-i+1);
+		j++;
+	}
+	return maxx;
+}
+int main() {
+	// your code goes here
+	int t;cin>>t;
+	while(t--){
+		string s;cin>>s;
+		cout<<solve(s)<<"\n";
+	}
+	return 0;
+}
