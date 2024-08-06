@@ -1,3 +1,11 @@
+// Question Name ---Length of Longest SubStr with Distinct Chars
+// Difficulty---MEDIUM
+
+// Description
+// Given a string S, find the length of the longest substring that comprises unique characters.
+
+// A substring is a contiguous sequence of characters within the string.
+
 #include <bits/stdc++.h>
 using namespace std;
 int solve(string &s){
